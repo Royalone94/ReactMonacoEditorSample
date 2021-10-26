@@ -1,0 +1,530 @@
+{
+  "decls": [
+    {
+      "name": "math.pi",
+      "ident": {
+        "type": {
+          "primitive": "DOUBLE"
+        },
+        "value": {
+          "double_value": 3.141592653589793
+        }
+      }
+    },
+    {
+      "name": "sperta.true",
+      "ident": {
+        "type": {
+          "primitive": "BOOL"
+        }
+      }
+    },
+    {
+      "name": "sperta.data_vendors.sentilink.sentilink_abuse_score",
+      "ident": {
+        "type": {
+          "primitive": "DOUBLE"
+        }
+      }
+    },
+    {
+      "name": "sperta.data_vendors.sentilink.sentilink_third_party_synthetic_score",
+      "ident": {
+        "type": {
+          "primitive": "DOUBLE"
+        }
+      }
+    },
+    {
+      "name": "sperta.data_vendors.sentilink.timestamp",
+      "ident": {
+        "type": {
+          "well_known": "TIMESTAMP"
+        }
+      }
+    },
+    {
+      "name": "context.application.user_id",
+      "ident": {
+        "type": {
+          "primitive": "STRING"
+        }
+      }
+    },
+    {
+      "name": "context.application.full_name",
+      "ident": {
+        "type": {
+          "primitive": "STRING"
+        }
+      }
+    },
+    {
+      "name": "contains",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "contains_string",
+            "params": [
+              {
+                "primitive": "STRING"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "BOOL"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "endsWith",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "ends_with_string",
+            "params": [
+              {
+                "primitive": "STRING"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "BOOL"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "startsWith",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "starts_with_string",
+            "params": [
+              {
+                "primitive": "STRING"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "BOOL"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "size",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "string_size",
+            "params": [
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "list_size",
+            "params": [
+              {
+                "list_type": {
+                  "elem_type": {
+                    "type_param": "A"
+                  }
+                }
+              }
+            ],
+            "type_params": [
+              "A"
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "map_size",
+            "params": [
+              {
+                "map_type": {
+                  "key_type": {
+                    "type_param": "A"
+                  },
+                  "value_type": {
+                    "type_param": "B"
+                  }
+                }
+              }
+            ],
+            "type_params": [
+              "A",
+              "B"
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getFullYear",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_year",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_year_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getMonth",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_month",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_month_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getDayOfYear",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_day_of_year",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_day_of_year_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getDayOfMonth",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_day_of_month",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_day_of_month_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getDate",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_day_of_month_1_based",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_day_of_month_1_based_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getDayOfWeek",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_day_of_week",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_day_of_week_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getHours",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_hours",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_hours_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getMinutes",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_minutes",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_minutes_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getSeconds",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_seconds",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_seconds_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "getMilliseconds",
+      "function": {
+        "overloads": [
+          {
+            "overload_id": "timestamp_to_milliseconds",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          },
+          {
+            "overload_id": "timestamp_to_milliseconds_with_tz",
+            "params": [
+              {
+                "well_known": "TIMESTAMP"
+              },
+              {
+                "primitive": "STRING"
+              }
+            ],
+            "result_type": {
+              "primitive": "INT64"
+            },
+            "is_instance_function": true
+          }
+        ]
+      }
+    }
+  ]
+}
